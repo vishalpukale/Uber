@@ -39,9 +39,9 @@ userSchema.methods.generateAuthToken = () => {
 }
 
 // method to comare the hashed pwd and currnt typed password
-userSchema.methods.comparePassword = async (password) => {
-    return await bcrypt.compare(password,  this.password);
-}
+userSchema.methods.comparePassword = async function (password) {
+    return await bcrypt.compare(password, this.password);
+};
 
 // method to hash the pwd
 userSchema.statics.hashPassword = async (password ) => {
